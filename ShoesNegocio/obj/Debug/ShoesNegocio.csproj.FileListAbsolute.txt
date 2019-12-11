@@ -1,0 +1,12 @@
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\bin\Debug\ShoesNegocio.dll
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\bin\Debug\ShoesNegocio.pdb
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\bin\Debug\ShoesData.dll
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\bin\Debug\EntityFramework.dll
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\bin\Debug\ShoesData.pdb
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\bin\Debug\ShoesData.dll.config
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\bin\Debug\EntityFramework.xml
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\obj\Debug\ShoesNegocio.csprojAssemblyReference.cache
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\obj\Debug\ShoesNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\obj\Debug\ShoesNegocio.csproj.CopyComplete
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\obj\Debug\ShoesNegocio.dll
+C:\Users\Curso\source\repos\ShoesApp2\ShoesNegocio\obj\Debug\ShoesNegocio.pdb
