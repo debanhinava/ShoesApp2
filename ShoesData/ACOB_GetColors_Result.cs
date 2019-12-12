@@ -11,13 +11,12 @@ namespace ShoesData
 {
     using System;
     
-    public partial class BRTV_SearchById_Result
+    public partial class ACOB_GetColors_Result
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public decimal PriceClient { get; set; }
-        public Nullable<int> IdBrand { get; set; }
-        public Nullable<int> IdCatalog { get; set; }
-        public Nullable<int> IdProvider { get; set; }
+        public int IdColor { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string HexaDecimal { get; set; }
+        public bool IsEnable { get; set; }
     }
 }

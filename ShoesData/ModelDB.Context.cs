@@ -47,6 +47,25 @@ namespace ShoesData
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<database_firewall_rules2> database_firewall_rules2 { get; set; }
     
+        public virtual int ACOB_DeleteProd(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ACOB_DeleteProd", iDParameter);
+        }
+    
+        public virtual ObjectResult<ACOB_GetColors_Result> ACOB_GetColors()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ACOB_GetColors_Result>("ACOB_GetColors");
+        }
+    
+        public virtual ObjectResult<ACOB_GetSizes_Result> ACOB_GetSizes()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ACOB_GetSizes_Result>("ACOB_GetSizes");
+        }
+    
         public virtual int ACOB_InsertProduct(Nullable<int> idType, Nullable<int> idColor, Nullable<int> idBrand, Nullable<int> idProvider, Nullable<int> idCatalog, string title, string nombre, string description, string observations, Nullable<decimal> priceDistributor, Nullable<decimal> priceClient, Nullable<decimal> priceMember, Nullable<bool> isEnabled, string keywords, Nullable<System.DateTime> dateUpdate)
         {
             var idTypeParameter = idType.HasValue ?
@@ -125,6 +144,84 @@ namespace ShoesData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ACOB_SearchByIdOrName_Result>("ACOB_SearchByIdOrName", idParameter, nombreParameter);
         }
     
+        public virtual int ACOB_UpdateProduct(Nullable<int> id, Nullable<int> idType, Nullable<int> idColor, Nullable<int> idBrand, Nullable<int> idProvider, Nullable<int> idCatalog, string title, string nombre, string description, string observations, Nullable<decimal> priceDistributor, Nullable<decimal> priceClient, Nullable<decimal> priceMember, Nullable<bool> isEnabled, string keywords, Nullable<System.DateTime> dateUpdate)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var idTypeParameter = idType.HasValue ?
+                new ObjectParameter("IdType", idType) :
+                new ObjectParameter("IdType", typeof(int));
+    
+            var idColorParameter = idColor.HasValue ?
+                new ObjectParameter("IdColor", idColor) :
+                new ObjectParameter("IdColor", typeof(int));
+    
+            var idBrandParameter = idBrand.HasValue ?
+                new ObjectParameter("IdBrand", idBrand) :
+                new ObjectParameter("IdBrand", typeof(int));
+    
+            var idProviderParameter = idProvider.HasValue ?
+                new ObjectParameter("IdProvider", idProvider) :
+                new ObjectParameter("IdProvider", typeof(int));
+    
+            var idCatalogParameter = idCatalog.HasValue ?
+                new ObjectParameter("IdCatalog", idCatalog) :
+                new ObjectParameter("IdCatalog", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var observationsParameter = observations != null ?
+                new ObjectParameter("Observations", observations) :
+                new ObjectParameter("Observations", typeof(string));
+    
+            var priceDistributorParameter = priceDistributor.HasValue ?
+                new ObjectParameter("PriceDistributor", priceDistributor) :
+                new ObjectParameter("PriceDistributor", typeof(decimal));
+    
+            var priceClientParameter = priceClient.HasValue ?
+                new ObjectParameter("PriceClient", priceClient) :
+                new ObjectParameter("PriceClient", typeof(decimal));
+    
+            var priceMemberParameter = priceMember.HasValue ?
+                new ObjectParameter("PriceMember", priceMember) :
+                new ObjectParameter("PriceMember", typeof(decimal));
+    
+            var isEnabledParameter = isEnabled.HasValue ?
+                new ObjectParameter("IsEnabled", isEnabled) :
+                new ObjectParameter("IsEnabled", typeof(bool));
+    
+            var keywordsParameter = keywords != null ?
+                new ObjectParameter("Keywords", keywords) :
+                new ObjectParameter("Keywords", typeof(string));
+    
+            var dateUpdateParameter = dateUpdate.HasValue ?
+                new ObjectParameter("DateUpdate", dateUpdate) :
+                new ObjectParameter("DateUpdate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ACOB_UpdateProduct", idParameter, idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, idCatalogParameter, titleParameter, nombreParameter, descriptionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dateUpdateParameter);
+        }
+    
+        public virtual ObjectResult<byte[]> ADER1_GetImagesByProductID(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("ADER1_GetImagesByProductID", iDParameter);
+        }
+    
         public virtual ObjectResult<ADER1_SearchProducts_Result> ADER1_SearchProducts(Nullable<int> iD, string name)
         {
             var iDParameter = iD.HasValue ?
@@ -136,6 +233,24 @@ namespace ShoesData
                 new ObjectParameter("Name", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ADER1_SearchProducts_Result>("ADER1_SearchProducts", iDParameter, nameParameter);
+        }
+    
+        public virtual ObjectResult<AVHM_BusquedaID_Result> AVHM_BusquedaID(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AVHM_BusquedaID_Result>("AVHM_BusquedaID", idParameter);
+        }
+    
+        public virtual ObjectResult<AVHM_BusquedaNombre_Result> AVHM_BusquedaNombre(string nombre)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AVHM_BusquedaNombre_Result>("AVHM_BusquedaNombre", nombreParameter);
         }
     
         public virtual ObjectResult<AVHM_MostrarProducts_Result> AVHM_MostrarProducts()
@@ -208,13 +323,13 @@ namespace ShoesData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AVHM_SP_InsertProd", idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, idCatalogParameter, titleParameter, nombreParameter, descriptionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dateUpdateParameter);
         }
     
-        public virtual ObjectResult<BRTV_SearchById_Result> BRTV_SearchById(Nullable<int> id)
+        public virtual ObjectResult<BRTV_SearchID_Result> BRTV_SearchID(Nullable<int> id)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("Id", id) :
                 new ObjectParameter("Id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<BRTV_SearchById_Result>("BRTV_SearchById", idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<BRTV_SearchID_Result>("BRTV_SearchID", idParameter);
         }
     
         public virtual ObjectResult<CAOE_BUSCAR_Result> CAOE_BUSCAR(Nullable<int> iD)
@@ -314,6 +429,11 @@ namespace ShoesData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<dena_sp_MostrarTodo_Result>("dena_sp_MostrarTodo");
         }
     
+        public virtual ObjectResult<eumc1_getAllProviders_Result> eumc1_getAllProviders()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<eumc1_getAllProviders_Result>("eumc1_getAllProviders");
+        }
+    
         public virtual ObjectResult<eumc1_getProductByIdOrName_Result> eumc1_getProductByIdOrName(Nullable<int> id, string nombre)
         {
             var idParameter = id.HasValue ?
@@ -348,15 +468,6 @@ namespace ShoesData
                 new ObjectParameter("elId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("FAVV_BuscaNombrePorId", elIdParameter);
-        }
-    
-        public virtual ObjectResult<FFFFFBRTV_SearchById_Result> FFFFFBRTV_SearchById(Nullable<int> id)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("Id", id) :
-                new ObjectParameter("Id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<FFFFFBRTV_SearchById_Result>("FFFFFBRTV_SearchById", idParameter);
         }
     
         public virtual int JEVJ1_ActualizaProducto(Nullable<int> productId, Nullable<int> idType, Nullable<int> idColor, Nullable<int> idBrand, Nullable<int> idProvider, Nullable<int> idCatalog, string title, string nombre, string description, string observations, Nullable<decimal> priceDistributor, Nullable<decimal> priceClient, Nullable<decimal> priceMember, Nullable<bool> isEnabled, string keywords, Nullable<System.DateTime> dataUpdate)
@@ -523,6 +634,19 @@ namespace ShoesData
         public virtual ObjectResult<JEVJ1_MuestraProductos_Result> JEVJ1_MuestraProductos()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<JEVJ1_MuestraProductos_Result>("JEVJ1_MuestraProductos");
+        }
+    
+        public virtual int JRCV1_DeleteLogicIsEnabled(string nombre, Nullable<int> id)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("JRCV1_DeleteLogicIsEnabled", nombreParameter, idParameter);
         }
     
         public virtual int JRCV1_InserNewProduct(Nullable<int> idType, Nullable<int> idColor, Nullable<int> idBrand, Nullable<int> idProvider, string tittle, string nombre, string descripcion, string observations, Nullable<decimal> priceDistributor, Nullable<decimal> priceClient, Nullable<decimal> priceMember, Nullable<bool> isEnabled, string keywords, Nullable<System.DateTime> dateUpdate)
@@ -763,6 +887,29 @@ namespace ShoesData
                 new ObjectParameter("DataUpdate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("LFGC1_UpdateProduct", productIdParameter, idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, idCatalogParameter, titleParameter, nombreParameter, descriptionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dataUpdateParameter);
+        }
+    
+        public virtual ObjectResult<MPVI_SEARCH_ALL_Result> MPVI_SEARCH_ALL()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MPVI_SEARCH_ALL_Result>("MPVI_SEARCH_ALL");
+        }
+    
+        public virtual ObjectResult<MPVI_SEARCH_ID_Result> MPVI_SEARCH_ID(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MPVI_SEARCH_ID_Result>("MPVI_SEARCH_ID", iDParameter);
+        }
+    
+        public virtual ObjectResult<MPVI_SEARCH_NOMBRE_Result> MPVI_SEARCH_NOMBRE(string nOMBRE)
+        {
+            var nOMBREParameter = nOMBRE != null ?
+                new ObjectParameter("NOMBRE", nOMBRE) :
+                new ObjectParameter("NOMBRE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MPVI_SEARCH_NOMBRE_Result>("MPVI_SEARCH_NOMBRE", nOMBREParameter);
         }
     
         public virtual ObjectResult<SEMD_SearchById_Result> SEMD_SearchById(Nullable<int> id)

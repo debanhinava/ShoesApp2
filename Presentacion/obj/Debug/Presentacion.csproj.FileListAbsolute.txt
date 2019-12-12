@@ -18,3 +18,4 @@ C:\Users\Curso\source\repos\ShoesApp2\Presentacion\obj\Debug\Presentacion.csproj
 C:\Users\Curso\source\repos\ShoesApp2\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\Curso\source\repos\ShoesApp2\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\Curso\source\repos\ShoesApp2\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Curso\source\repos\ShoesApp2\Presentacion\obj\Debug\Presentacion.FrmEdicion.resources

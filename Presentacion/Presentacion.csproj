@@ -73,6 +73,9 @@
     <EmbeddedResource Include="FrmBusqueda.resx">
       <DependentUpon>FrmBusqueda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEdicioncs.resx">
+      <DependentUpon>FrmEdicioncs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

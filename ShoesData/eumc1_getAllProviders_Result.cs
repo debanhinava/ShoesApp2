@@ -11,13 +11,9 @@ namespace ShoesData
 {
     using System;
     
-    public partial class FFFFFBRTV_SearchById_Result
+    public partial class eumc1_getAllProviders_Result
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public decimal PriceClient { get; set; }
-        public Nullable<int> IdBrand { get; set; }
-        public Nullable<int> IdCatalog { get; set; }
-        public Nullable<int> IdProvider { get; set; }
+        public string Name { get; set; }
+        public int IdProvider { get; set; }
     }
 }
