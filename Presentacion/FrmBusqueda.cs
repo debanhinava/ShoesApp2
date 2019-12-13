@@ -41,7 +41,9 @@ namespace Presentacion
                     HeaderText = "Modificar",
                     Text = "modificar",
                     UseColumnTextForLinkValue = true
-                });
+                }
+                );
+
         }
 
         //public static string idtype;

@@ -27,21 +27,30 @@ namespace Presentacion
                 List<dena_sp_BusquedaProdId_Result> LstId = negoPro.ListaPorId(int.Parse(txtIdProdEd.Text));
                 foreach (var item in LstId.ToList())
                 {
-                    txtNombrePro.Text = item.Nombre;
-                    txtIdBrand.Text = item.IdBrand.ToString();
-                    txtIdCatalog.Text = item.IdCatalog.ToString();
-                    txtIdColor.Text = item.IdColor.ToString();
-                    txtIdProvider.Text = item.IdProvider.ToString();
-                    txtIdType.Text = item.IdType.ToString();
-                    txtKeywords.Text = item.Keywords.ToString();
-                    txtDescription.Text = item.Description.ToString();
-                    txtPriceClient.Text = item.PriceClient.ToString();
-                    txtObservations.Text = item.Observations.ToString();
-                    txtPriceD.Text = item.PriceDistributor.ToString();
-                    txtPriceMem.Text = item.PriceMember.ToString();
-                    txtTitle.Text = item.Title.ToString();
-                    chkIsEnabled.Checked = item.IsEnabled;
-                    dateTimePicker1.Value = item.DateUpdate.Value;
+                    try
+                    {
+                        txtNombrePro.Text = item.Nombre;
+                        txtIdBrand.Text = item.IdBrand.ToString();
+                        txtIdCatalog.Text = item.IdCatalog.ToString();
+                        txtIdColor.Text = item.IdColor.ToString();
+                        txtIdProvider.Text = item.IdProvider.ToString();
+                        txtIdType.Text = item.IdType.ToString();
+                        txtKeywords.Text = item.Keywords.ToString();
+                        txtDescription.Text = item.Description.ToString();
+                        txtPriceClient.Text = item.PriceClient.ToString();
+                        txtObservations.Text = item.Observations.ToString();
+                        txtPriceD.Text = item.PriceDistributor.ToString();
+                        txtPriceMem.Text = item.PriceMember.ToString();
+                        txtTitle.Text = item.Title.ToString();
+                        chkIsEnabled.Checked = item.IsEnabled;
+                        dateTimePicker1.Value = item.DateUpdate.Value;
+                    }
+                    catch (Exception)
+                    {
+                
+                        
+                    }
+                    
 
                 }
 
