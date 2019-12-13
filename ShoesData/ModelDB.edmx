@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DataProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DataProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CatBrands">
           <Key>
             <PropertyRef Name="IdBrand" />
@@ -548,6 +548,24 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <Parameter Name="Keywords" Type="nvarchar" Mode="In" />
           <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
         </Function>
+        <Function Name="dena_sp_ModificarProd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="idType" Type="int" Mode="In" />
+          <Parameter Name="idColor" Type="int" Mode="In" />
+          <Parameter Name="idBrand" Type="int" Mode="In" />
+          <Parameter Name="idProvider" Type="int" Mode="In" />
+          <Parameter Name="idCatalog" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="Observations" Type="varchar" Mode="In" />
+          <Parameter Name="PriceDistributor" Type="decimal" Mode="In" />
+          <Parameter Name="PriceClient" Type="decimal" Mode="In" />
+          <Parameter Name="PriceMember" Type="decimal" Mode="In" />
+          <Parameter Name="IsEnabled" Type="bit" Mode="In" />
+          <Parameter Name="Keywords" Type="varchar" Mode="In" />
+          <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="dena_sp_MostrarTodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="eumc1_getAllProviders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="eumc1_getProductByIdOrName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -555,7 +573,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
         </Function>
         <Function Name="FASV1_FilterByTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Title" Type="nvarchar" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
         </Function>
         <Function Name="FASV1_GetAllProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="FAVV_BuscaNombrePorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -616,6 +634,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <Parameter Name="IdColor" Type="int" Mode="In" />
           <Parameter Name="IdBrand" Type="int" Mode="In" />
           <Parameter Name="IdProvider" Type="int" Mode="In" />
+          <Parameter Name="IdCatalog" Type="int" Mode="In" />
           <Parameter Name="Tittle" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="Nombre" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="Descripcion" Type="nvarchar(max)" Mode="In" />
@@ -826,8 +845,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <End Role="Qualification" EntitySet="Qualification" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DataProductsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1397,7 +1415,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <End Role="Qualification" EntitySet="Qualification" />
           </AssociationSet>
           <FunctionImport Name="ACOB_DeleteProd">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ACOB_GetColors" ReturnType="Collection(DataProductsModel.ACOB_GetColors_Result)" />
           <FunctionImport Name="ACOB_GetSizes" ReturnType="Collection(DataProductsModel.ACOB_GetSizes_Result)" />
@@ -1441,17 +1459,17 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="DateUpdate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="ADER1_GetImagesByProductID" ReturnType="Collection(Binary)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ADER1_SearchProducts" ReturnType="Collection(DataProductsModel.ADER1_SearchProducts_Result)">
             <Parameter Name="ID" Mode="In" Type="Int32" />
             <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="AVHM_BusquedaID" ReturnType="Collection(DataProductsModel.AVHM_BusquedaID_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="AVHM_BusquedaNombre" ReturnType="Collection(DataProductsModel.AVHM_BusquedaNombre_Result)">
-            <Parameter Name="Nombre" Mode="In" Type="String" />
+          <Parameter Name="Nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="AVHM_MostrarProducts" ReturnType="Collection(DataProductsModel.AVHM_MostrarProducts_Result)" />
           <FunctionImport Name="AVHM_SP_InsertProd">
@@ -1472,16 +1490,16 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="DateUpdate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="BRTV_SearchID" ReturnType="Collection(DataProductsModel.BRTV_SearchID_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="CAOE_BUSCAR" ReturnType="Collection(DataProductsModel.CAOE_BUSCAR_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="dena_sp_BusquedaProdId" ReturnType="Collection(DataProductsModel.dena_sp_BusquedaProdId_Result)">
-            <Parameter Name="Id" Mode="In" Type="String" />
+          <Parameter Name="Id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="dena_sp_BusquedaProdNom" ReturnType="Collection(DataProductsModel.dena_sp_BusquedaProdNom_Result)">
-            <Parameter Name="Nombre" Mode="In" Type="String" />
+          <Parameter Name="Nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="dena_sp_InsertProd">
             <Parameter Name="IdType" Mode="In" Type="Int32" />
@@ -1507,11 +1525,11 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="Nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="FASV1_FilterByTitle" ReturnType="Collection(DataProductsModel.FASV1_FilterByTitle_Result)">
-            <Parameter Name="Title" Mode="In" Type="String" />
+          <Parameter Name="Title" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="FASV1_GetAllProducts" ReturnType="Collection(DataProductsModel.FASV1_GetAllProducts_Result)" />
           <FunctionImport Name="FAVV_BuscaNombrePorId" ReturnType="Collection(String)">
-            <Parameter Name="elId" Mode="In" Type="Int32" />
+          <Parameter Name="elId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="JEVJ1_ActualizaProducto">
             <Parameter Name="ProductId" Mode="In" Type="Int32" />
@@ -1532,13 +1550,13 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="DataUpdate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="JEVJ1_BuscaProductoPorID" ReturnType="Collection(DataProductsModel.JEVJ1_BuscaProductoPorID_Result)">
-            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+          <Parameter Name="ProductId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="JEVJ1_BuscaProductoPorNombre" ReturnType="Collection(DataProductsModel.JEVJ1_BuscaProductoPorNombre_Result)">
-            <Parameter Name="ProductName" Mode="In" Type="String" />
+          <Parameter Name="ProductName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="JEVJ1_EliminaProductoPorID">
-            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+          <Parameter Name="ProductId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="JEVJ1_InsertaNuevoProducto">
             <Parameter Name="IdType" Mode="In" Type="Int32" />
@@ -1567,6 +1585,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="IdColor" Mode="In" Type="Int32" />
             <Parameter Name="IdBrand" Mode="In" Type="Int32" />
             <Parameter Name="IdProvider" Mode="In" Type="Int32" />
+            <Parameter Name="IdCatalog" Mode="In" Type="Int32" />
             <Parameter Name="Tittle" Mode="In" Type="String" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="Descripcion" Mode="In" Type="String" />
@@ -1584,7 +1603,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           </FunctionImport>
           <FunctionImport Name="LFGC1_AllProducts" ReturnType="Collection(DataProductsModel.LFGC1_AllProducts_Result)" />
           <FunctionImport Name="LFGC1_DeleteProductID">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="LFGC1_InsertProduct">
             <Parameter Name="IdType" Mode="In" Type="Int32" />
@@ -1604,10 +1623,10 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="DataUpdate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="LFGC1_SearchProductID" ReturnType="Collection(DataProductsModel.LFGC1_SearchProductID_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="LFGC1_SearchProductName" ReturnType="Collection(DataProductsModel.LFGC1_SearchProductName_Result)">
-            <Parameter Name="ProductName" Mode="In" Type="String" />
+          <Parameter Name="ProductName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="LFGC1_UpdateProduct">
             <Parameter Name="ProductId" Mode="In" Type="Int32" />
@@ -1629,16 +1648,16 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           </FunctionImport>
           <FunctionImport Name="MPVI_SEARCH_ALL" ReturnType="Collection(DataProductsModel.MPVI_SEARCH_ALL_Result)" />
           <FunctionImport Name="MPVI_SEARCH_ID" ReturnType="Collection(DataProductsModel.MPVI_SEARCH_ID_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MPVI_SEARCH_NOMBRE" ReturnType="Collection(DataProductsModel.MPVI_SEARCH_NOMBRE_Result)">
-            <Parameter Name="NOMBRE" Mode="In" Type="String" />
+          <Parameter Name="NOMBRE" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SEMD_SearchById" ReturnType="Collection(DataProductsModel.SEMD_SearchById_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SEMD_SearchByName" ReturnType="Collection(DataProductsModel.SEMD_SearchByName_Result)">
-            <Parameter Name="Nombre" Mode="In" Type="String" />
+          <Parameter Name="Nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SEMD_SearchProducts" ReturnType="Collection(DataProductsModel.SEMD_SearchProducts_Result)">
             <Parameter Name="Id" Mode="In" Type="Int32" />
@@ -1675,6 +1694,24 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="dena_sp_ModificarProd">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="idType" Mode="In" Type="Int32" />
+            <Parameter Name="idColor" Mode="In" Type="Int32" />
+            <Parameter Name="idBrand" Mode="In" Type="Int32" />
+            <Parameter Name="idProvider" Mode="In" Type="Int32" />
+            <Parameter Name="idCatalog" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="Observations" Mode="In" Type="String" />
+            <Parameter Name="PriceDistributor" Mode="In" Type="Decimal" />
+            <Parameter Name="PriceClient" Mode="In" Type="Decimal" />
+            <Parameter Name="PriceMember" Mode="In" Type="Decimal" />
+            <Parameter Name="IsEnabled" Mode="In" Type="Boolean" />
+            <Parameter Name="Keywords" Mode="In" Type="String" />
+            <Parameter Name="DateUpdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="ACOB_GetColors_Result">
           <Property Type="Int32" Name="IdColor" Nullable="false" />
@@ -3043,6 +3080,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DataProductsModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DataProductsModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="dena_sp_ModificarProd" FunctionName="DataProductsModel.Store.dena_sp_ModificarProd" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -543,6 +543,24 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
     <Parameter Name="Keywords" Type="nvarchar" Mode="In" />
     <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
   </Function>
+  <Function Name="dena_sp_ModificarProd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="idType" Type="int" Mode="In" />
+    <Parameter Name="idColor" Type="int" Mode="In" />
+    <Parameter Name="idBrand" Type="int" Mode="In" />
+    <Parameter Name="idProvider" Type="int" Mode="In" />
+    <Parameter Name="idCatalog" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Observations" Type="varchar" Mode="In" />
+    <Parameter Name="PriceDistributor" Type="decimal" Mode="In" />
+    <Parameter Name="PriceClient" Type="decimal" Mode="In" />
+    <Parameter Name="PriceMember" Type="decimal" Mode="In" />
+    <Parameter Name="IsEnabled" Type="bit" Mode="In" />
+    <Parameter Name="Keywords" Type="varchar" Mode="In" />
+    <Parameter Name="DateUpdate" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="dena_sp_MostrarTodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="eumc1_getAllProviders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="eumc1_getProductByIdOrName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -550,7 +568,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
     <Parameter Name="Nombre" Type="varchar" Mode="In" />
   </Function>
   <Function Name="FASV1_FilterByTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
   </Function>
   <Function Name="FASV1_GetAllProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="FAVV_BuscaNombrePorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -611,6 +629,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
     <Parameter Name="IdColor" Type="int" Mode="In" />
     <Parameter Name="IdBrand" Type="int" Mode="In" />
     <Parameter Name="IdProvider" Type="int" Mode="In" />
+    <Parameter Name="IdCatalog" Type="int" Mode="In" />
     <Parameter Name="Tittle" Type="nvarchar(max)" Mode="In" />
     <Parameter Name="Nombre" Type="nvarchar(max)" Mode="In" />
     <Parameter Name="Descripcion" Type="nvarchar(max)" Mode="In" />

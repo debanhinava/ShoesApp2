@@ -77,9 +77,12 @@
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(31, 170);
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
             this.dgvProducts.RowTemplate.Height = 28;
-            this.dgvProducts.Size = new System.Drawing.Size(639, 211);
+            this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProducts.Size = new System.Drawing.Size(1336, 211);
             this.dgvProducts.TabIndex = 4;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
             // btnBuscar
             // 
@@ -89,7 +92,6 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            //this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnBuscarNom
             // 
@@ -99,7 +101,6 @@
             this.btnBuscarNom.TabIndex = 6;
             this.btnBuscarNom.Text = "Buscar";
             this.btnBuscarNom.UseVisualStyleBackColor = true;
-            //this.btnBuscarNom.Click += new System.EventHandler(this.btnBuscarNom_Click);
             // 
             // btnNuevo
             // 
@@ -109,7 +110,7 @@
             this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
-            //this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // LblMensaje
             // 
@@ -124,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1423, 450);
             this.Controls.Add(this.LblMensaje);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscarNom);

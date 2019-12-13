@@ -60,12 +60,15 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblMensaje2 = new System.Windows.Forms.Label();
             this.txtPriceD = new System.Windows.Forms.TextBox();
+            this.IdProductEd = new System.Windows.Forms.Label();
+            this.txtIdProdEd = new System.Windows.Forms.TextBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(86, 29);
+            this.lblType.Location = new System.Drawing.Point(86, 57);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(64, 20);
             this.lblType.TabIndex = 0;
@@ -74,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(86, 85);
+            this.label2.Location = new System.Drawing.Point(86, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 1;
@@ -83,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(86, 136);
+            this.label3.Location = new System.Drawing.Point(86, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 2;
@@ -92,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(86, 192);
+            this.label4.Location = new System.Drawing.Point(86, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 3;
@@ -101,7 +104,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(86, 235);
+            this.label5.Location = new System.Drawing.Point(86, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 20);
             this.label5.TabIndex = 4;
@@ -110,7 +113,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(86, 284);
+            this.label6.Location = new System.Drawing.Point(86, 312);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 20);
             this.label6.TabIndex = 5;
@@ -119,7 +122,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 330);
+            this.label1.Location = new System.Drawing.Point(86, 358);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 6;
@@ -128,7 +131,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(86, 389);
+            this.label7.Location = new System.Drawing.Point(86, 417);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 7;
@@ -136,56 +139,56 @@
             // 
             // txtIdType
             // 
-            this.txtIdType.Location = new System.Drawing.Point(210, 22);
+            this.txtIdType.Location = new System.Drawing.Point(210, 50);
             this.txtIdType.Name = "txtIdType";
             this.txtIdType.Size = new System.Drawing.Size(100, 26);
             this.txtIdType.TabIndex = 8;
             // 
             // txtIdColor
             // 
-            this.txtIdColor.Location = new System.Drawing.Point(210, 78);
+            this.txtIdColor.Location = new System.Drawing.Point(210, 106);
             this.txtIdColor.Name = "txtIdColor";
             this.txtIdColor.Size = new System.Drawing.Size(100, 26);
             this.txtIdColor.TabIndex = 9;
             // 
             // txtIdBrand
             // 
-            this.txtIdBrand.Location = new System.Drawing.Point(210, 129);
+            this.txtIdBrand.Location = new System.Drawing.Point(210, 157);
             this.txtIdBrand.Name = "txtIdBrand";
             this.txtIdBrand.Size = new System.Drawing.Size(100, 26);
             this.txtIdBrand.TabIndex = 10;
             // 
             // txtIdProvider
             // 
-            this.txtIdProvider.Location = new System.Drawing.Point(210, 185);
+            this.txtIdProvider.Location = new System.Drawing.Point(210, 213);
             this.txtIdProvider.Name = "txtIdProvider";
             this.txtIdProvider.Size = new System.Drawing.Size(100, 26);
             this.txtIdProvider.TabIndex = 11;
             // 
             // txtIdCatalog
             // 
-            this.txtIdCatalog.Location = new System.Drawing.Point(210, 235);
+            this.txtIdCatalog.Location = new System.Drawing.Point(210, 263);
             this.txtIdCatalog.Name = "txtIdCatalog";
             this.txtIdCatalog.Size = new System.Drawing.Size(100, 26);
             this.txtIdCatalog.TabIndex = 12;
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(210, 278);
+            this.txtTitle.Location = new System.Drawing.Point(210, 306);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(100, 26);
             this.txtTitle.TabIndex = 13;
             // 
             // txtNombrePro
             // 
-            this.txtNombrePro.Location = new System.Drawing.Point(210, 330);
+            this.txtNombrePro.Location = new System.Drawing.Point(210, 358);
             this.txtNombrePro.Name = "txtNombrePro";
             this.txtNombrePro.Size = new System.Drawing.Size(100, 26);
             this.txtNombrePro.TabIndex = 14;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(210, 383);
+            this.txtDescription.Location = new System.Drawing.Point(210, 411);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(100, 26);
             this.txtDescription.TabIndex = 15;
@@ -302,7 +305,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(706, 443);
+            this.btnAgregar.Location = new System.Drawing.Point(461, 450);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(93, 38);
             this.btnAgregar.TabIndex = 30;
@@ -326,11 +329,41 @@
             this.txtPriceD.Size = new System.Drawing.Size(100, 26);
             this.txtPriceD.TabIndex = 32;
             // 
+            // IdProductEd
+            // 
+            this.IdProductEd.AutoSize = true;
+            this.IdProductEd.Location = new System.Drawing.Point(84, 9);
+            this.IdProductEd.Name = "IdProductEd";
+            this.IdProductEd.Size = new System.Drawing.Size(84, 20);
+            this.IdProductEd.TabIndex = 33;
+            this.IdProductEd.Text = "ID product";
+            // 
+            // txtIdProdEd
+            // 
+            this.txtIdProdEd.Enabled = false;
+            this.txtIdProdEd.Location = new System.Drawing.Point(210, 9);
+            this.txtIdProdEd.Name = "txtIdProdEd";
+            this.txtIdProdEd.Size = new System.Drawing.Size(100, 26);
+            this.txtIdProdEd.TabIndex = 34;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(638, 450);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(94, 38);
+            this.btnModificar.TabIndex = 35;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // FrmEdicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1351, 610);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.txtIdProdEd);
+            this.Controls.Add(this.IdProductEd);
             this.Controls.Add(this.txtPriceD);
             this.Controls.Add(this.lblMensaje2);
             this.Controls.Add(this.btnAgregar);
@@ -381,14 +414,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtIdType;
-        private System.Windows.Forms.TextBox txtIdColor;
-        private System.Windows.Forms.TextBox txtIdBrand;
-        private System.Windows.Forms.TextBox txtIdProvider;
-        private System.Windows.Forms.TextBox txtIdCatalog;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.TextBox txtNombrePro;
-        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label txtPriceDis;
         private System.Windows.Forms.Label label10;
@@ -396,14 +421,25 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox chkIsEnabled;
-        private System.Windows.Forms.TextBox txtObservations;
-        private System.Windows.Forms.TextBox txtPriceClient;
-        private System.Windows.Forms.TextBox txtPriceMem;
-        private System.Windows.Forms.TextBox txtKeywords;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblMensaje2;
-        private System.Windows.Forms.TextBox txtPriceD;
+        public System.Windows.Forms.TextBox txtIdType;
+        public System.Windows.Forms.TextBox txtIdColor;
+        public System.Windows.Forms.TextBox txtIdBrand;
+        public System.Windows.Forms.TextBox txtIdProvider;
+        public System.Windows.Forms.TextBox txtIdCatalog;
+        public System.Windows.Forms.TextBox txtTitle;
+        public System.Windows.Forms.TextBox txtNombrePro;
+        public System.Windows.Forms.TextBox txtDescription;
+        public System.Windows.Forms.CheckBox chkIsEnabled;
+        public System.Windows.Forms.TextBox txtObservations;
+        public System.Windows.Forms.TextBox txtPriceClient;
+        public System.Windows.Forms.TextBox txtPriceMem;
+        public System.Windows.Forms.TextBox txtKeywords;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.TextBox txtPriceD;
+        private System.Windows.Forms.Label IdProductEd;
+        public System.Windows.Forms.TextBox txtIdProdEd;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

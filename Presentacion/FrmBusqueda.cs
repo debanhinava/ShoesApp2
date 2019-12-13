@@ -24,46 +24,52 @@ namespace Presentacion
         {
             dgvProducts.DataSource = LLenarGrid();
 
-            //agregar columna de modificar
+            //agregar columna de modificar y agregar botn de modificar
+            //dgvProducts.Columns.Add(
+            //    new DataGridViewButtonColumn()
+            //    {
+            //        HeaderText = "columntitle",
+            //        Text = "modificar",
+            //        UseColumnTextForButtonValue = true
+            //    });
+
+
+            //agregar columa de moddificar y LINK de modificar
             dgvProducts.Columns.Add(
-                new DataGridViewButtonColumn()
+                new DataGridViewLinkColumn()
                 {
-                    HeaderText = "columntitle",
+                    HeaderText = "Modificar",
                     Text = "modificar",
-                    UseColumnTextForButtonValue = true
+                    UseColumnTextForLinkValue = true
                 });
         }
 
-        //este le dice que hacer cuando le dan al botn de modificar del grid
-        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 1)  //Dónde la columna con el botón es la 6 con posición 5
-            {
-                /*Hacer algo ...*/
-                MessageBox.Show(string.Format("Hizo click en el botón de la fila {0}, posición {1}",
-                                e.RowIndex + 1, e.RowIndex));
-            }
-        }
+        //public static string idtype;
+        //public static string idcolor;
+
+        //public void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    idtype = dgvProducts.Rows[e.RowIndex].Cells["idtype"].Value.ToString();
+        //    idcolor = dgvProducts.Rows[e.RowIndex].Cells["idcolor"].Value.ToString();
+        //}
 
 
-
-
-        private List<dena_sp_MostrarTodo_Result> LLenarGrid()
+            private List<dena_sp_MostrarTodo_Result> LLenarGrid()
         {
             //NegocioProducts negocioProducts = new NegocioProducts();
             return negocioProducts.ListaProducts();
 
         }
 
-        public List <dena_sp_BusquedaProdId_Result> BusquedaId(int id)
+        public List<dena_sp_BusquedaProdId_Result> BusquedaId(int id)
         {
-            
+
             return negocioProducts.ListaPorId(int.Parse(txtId.Text));
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dgvProducts.DataSource= BusquedaId(int.Parse(txtId.Text));
+            dgvProducts.DataSource = BusquedaId(int.Parse(txtId.Text));
         }
 
 
@@ -78,11 +84,46 @@ namespace Presentacion
             dgvProducts.DataSource = BusquedaPorNom(txtNombre.Text);
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        
+
+        
+        //este le dice que hacer cuando le dan al botn de modificar del grid
+        private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // la clumna 16 pertenece a donde está el link de modificar 
+            if (e.ColumnIndex == 16)
+            {
+                int idoficial = (int)dgvProducts.CurrentRow.Cells["Id"].Value;
+                //MessageBox.Show("mensaje" + idoficial.ToString());
+                
+                FrmEdicion form3 = new FrmEdicion();
+                form3.txtIdProdEd.Text = idoficial.ToString();
+                form3.ShowDialog();
+            }
+
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
         {
             FrmEdicion form2 = new FrmEdicion();
             form2.ShowDialog();
         }
-        
+
+        // este seria si da doble clic sobre una columna que tiene datos
+        //no se ocupa por el momento, ya que en el anterior lo especifica, que solo sea el de la columna 16 
+        //private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    int idoficial = (int)dgvProducts.CurrentRow.Cells["Id"].Value;
+        //    MessageBox.Show("mensaje" + idoficial.ToString());
+
+        //if (dgvProducts.SelectedRows != null)
+        //{
+        //    FrmEdicion form3 = new FrmEdicion();
+        //    form3.ShowDialog();
+        //}
+
+
+        //}
+
     }
 }

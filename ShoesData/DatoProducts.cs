@@ -96,15 +96,15 @@ namespace ShoesData
                 ListaNom.Add(datosProdNom);
             }
             return ListaNom;
-
-            
-
         }
         public void AgregarProd (int IdType, int IdColor, int IdBrand, int IdProvider, int IdCatalog, string Title, string Nombre, string Description, string Observations, decimal PriceDistributor, decimal PriceClient, decimal PriceMember, bool IsEnabled, string Keywords, DateTime DateUpdate)
         {
             modeldb.dena_sp_InsertProd(IdType, IdColor, IdBrand, IdProvider, IdCatalog, Title, Nombre, Description, Observations, PriceDistributor, PriceClient, PriceMember, IsEnabled, Keywords, DateUpdate);
         }
         
-        
+        public void ModificarProd(int Id, int IdType, int IdColor, int IdBrand, int IdProvider, int IdCatalog, string Title, string Nombre, string Description, string Observations, decimal PriceDistributor, decimal PriceClient, decimal PriceMember, bool IsEnabled, string Keywords, DateTime DateUpdate)
+        {
+            modeldb.dena_sp_ModificarProd (Id, IdType, IdColor, IdBrand, IdProvider, IdCatalog, Title, Nombre, Description, Observations, PriceDistributor, PriceClient, PriceMember, IsEnabled, Keywords, DateUpdate);
+        }
     }
 }

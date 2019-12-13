@@ -649,7 +649,7 @@ namespace ShoesData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("JRCV1_DeleteLogicIsEnabled", nombreParameter, idParameter);
         }
     
-        public virtual int JRCV1_InserNewProduct(Nullable<int> idType, Nullable<int> idColor, Nullable<int> idBrand, Nullable<int> idProvider, string tittle, string nombre, string descripcion, string observations, Nullable<decimal> priceDistributor, Nullable<decimal> priceClient, Nullable<decimal> priceMember, Nullable<bool> isEnabled, string keywords, Nullable<System.DateTime> dateUpdate)
+        public virtual int JRCV1_InserNewProduct(Nullable<int> idType, Nullable<int> idColor, Nullable<int> idBrand, Nullable<int> idProvider, Nullable<int> idCatalog, string tittle, string nombre, string descripcion, string observations, Nullable<decimal> priceDistributor, Nullable<decimal> priceClient, Nullable<decimal> priceMember, Nullable<bool> isEnabled, string keywords, Nullable<System.DateTime> dateUpdate)
         {
             var idTypeParameter = idType.HasValue ?
                 new ObjectParameter("IdType", idType) :
@@ -666,6 +666,10 @@ namespace ShoesData
             var idProviderParameter = idProvider.HasValue ?
                 new ObjectParameter("IdProvider", idProvider) :
                 new ObjectParameter("IdProvider", typeof(int));
+    
+            var idCatalogParameter = idCatalog.HasValue ?
+                new ObjectParameter("IdCatalog", idCatalog) :
+                new ObjectParameter("IdCatalog", typeof(int));
     
             var tittleParameter = tittle != null ?
                 new ObjectParameter("Tittle", tittle) :
@@ -707,7 +711,7 @@ namespace ShoesData
                 new ObjectParameter("DateUpdate", dateUpdate) :
                 new ObjectParameter("DateUpdate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("JRCV1_InserNewProduct", idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, tittleParameter, nombreParameter, descripcionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dateUpdateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("JRCV1_InserNewProduct", idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, idCatalogParameter, tittleParameter, nombreParameter, descripcionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dateUpdateParameter);
         }
     
         public virtual ObjectResult<JRCV1_SearchShoesProduct_Result> JRCV1_SearchShoesProduct(Nullable<int> id, string nombre)
@@ -1049,6 +1053,75 @@ namespace ShoesData
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual int dena_sp_ModificarProd(Nullable<int> id, Nullable<int> idType, Nullable<int> idColor, Nullable<int> idBrand, Nullable<int> idProvider, Nullable<int> idCatalog, string title, string nombre, string description, string observations, Nullable<decimal> priceDistributor, Nullable<decimal> priceClient, Nullable<decimal> priceMember, Nullable<bool> isEnabled, string keywords, Nullable<System.DateTime> dateUpdate)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            var idTypeParameter = idType.HasValue ?
+                new ObjectParameter("idType", idType) :
+                new ObjectParameter("idType", typeof(int));
+    
+            var idColorParameter = idColor.HasValue ?
+                new ObjectParameter("idColor", idColor) :
+                new ObjectParameter("idColor", typeof(int));
+    
+            var idBrandParameter = idBrand.HasValue ?
+                new ObjectParameter("idBrand", idBrand) :
+                new ObjectParameter("idBrand", typeof(int));
+    
+            var idProviderParameter = idProvider.HasValue ?
+                new ObjectParameter("idProvider", idProvider) :
+                new ObjectParameter("idProvider", typeof(int));
+    
+            var idCatalogParameter = idCatalog.HasValue ?
+                new ObjectParameter("idCatalog", idCatalog) :
+                new ObjectParameter("idCatalog", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var observationsParameter = observations != null ?
+                new ObjectParameter("Observations", observations) :
+                new ObjectParameter("Observations", typeof(string));
+    
+            var priceDistributorParameter = priceDistributor.HasValue ?
+                new ObjectParameter("PriceDistributor", priceDistributor) :
+                new ObjectParameter("PriceDistributor", typeof(decimal));
+    
+            var priceClientParameter = priceClient.HasValue ?
+                new ObjectParameter("PriceClient", priceClient) :
+                new ObjectParameter("PriceClient", typeof(decimal));
+    
+            var priceMemberParameter = priceMember.HasValue ?
+                new ObjectParameter("PriceMember", priceMember) :
+                new ObjectParameter("PriceMember", typeof(decimal));
+    
+            var isEnabledParameter = isEnabled.HasValue ?
+                new ObjectParameter("IsEnabled", isEnabled) :
+                new ObjectParameter("IsEnabled", typeof(bool));
+    
+            var keywordsParameter = keywords != null ?
+                new ObjectParameter("Keywords", keywords) :
+                new ObjectParameter("Keywords", typeof(string));
+    
+            var dateUpdateParameter = dateUpdate.HasValue ?
+                new ObjectParameter("DateUpdate", dateUpdate) :
+                new ObjectParameter("DateUpdate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("dena_sp_ModificarProd", idParameter, idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, idCatalogParameter, titleParameter, nombreParameter, descriptionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dateUpdateParameter);
         }
     }
 }
